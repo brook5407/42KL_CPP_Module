@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 10:43:15 by chchin            #+#    #+#             */
-/*   Updated: 2023/02/13 13:15:52 by chchin           ###   ########.fr       */
+/*   Created: 2023/02/13 11:57:48 by chchin            #+#    #+#             */
+/*   Updated: 2023/02/13 13:31:08 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-
-class Harl {
-
-private:
-	void	(Harl::*levels[4])(void);
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-
-public:
-	Harl();
-	~Harl();
-	void	complain(std::string level);
-
-};
-
-#endif
+int main(int argc, char **argv) {
+	Harl harl;
+	if (argc == 2)
+		harl.complain(argv[1]);
+	return (0);
+}
