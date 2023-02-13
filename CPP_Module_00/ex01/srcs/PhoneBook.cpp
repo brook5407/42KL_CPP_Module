@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 21:48:19 by brook             #+#    #+#             */
-/*   Updated: 2023/02/09 21:48:19 by brook            ###   ########.fr       */
+/*   Updated: 2023/02/13 10:29:51 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static std::string	get_input(std::string field){
 		std::cout << "\t" << field;
 		std::getline(std::cin, input);
 		if (std::cin.eof() || std::cin.fail()){
-			std::cout << "\033[1;31m\n\tError: Input Failure\033[0m" << std::endl;
+			std::cerr << "\033[1;31m\n\tError: Input Failure\033[0m" << std::endl;
 			std::exit(EXIT_FAILURE);
 		}
 		if (!input.empty() && input.find_first_not_of(" \t") != std::string::npos)
@@ -70,7 +70,7 @@ void	PhoneBook::search() {
 		std::cout << "Enter an index to display additional information: ";
 		std::getline(std::cin, index);
 		if (std::cin.eof() || std::cin.fail()) {
-			std::cout << "\033[1;31m\n\tError: Input Failure\033[0m" << std::endl;
+			std::cerr << "\033[1;31m\n\tError: Input Failure\033[0m" << std::endl;
 			std::exit(EXIT_FAILURE);
 		}
 		if (!index.empty() && index.find_first_not_of(" \t") != std::string::npos

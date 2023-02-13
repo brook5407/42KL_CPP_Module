@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:41:32 by brook             #+#    #+#             */
-/*   Updated: 2023/02/12 13:41:32 by brook            ###   ########.fr       */
+/*   Updated: 2023/02/13 11:08:25 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(void)
 
 	delete bar;
 	delete foo;
+	system("leaks -q Zombie");
 	return (0);
 }

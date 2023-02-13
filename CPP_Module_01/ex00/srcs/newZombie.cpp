@@ -12,6 +12,7 @@
 
 #include "Zombie.hpp"
 
+/* Creates a new zombie using new and returns its pointer */
 Zombie	*newZombie(std::string name) {
 	Zombie	*zombie = new Zombie(name);
 	return (zombie);

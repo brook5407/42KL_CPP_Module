@@ -12,16 +12,13 @@
 
 #include "Zombie.hpp"
 
-int	main(void)
+int main(void)
 {
-	Zombie	*foo = newZombie("Foo");
-	foo->announce();
-	Zombie	*bar = newZombie("Bar");
-	bar->announce();
-
-	randomChump("Baz");
-
-	delete bar;
-	delete foo;
+	int N = 5;
+	Zombie *zombies = zombieHorde(N, "Horde");
+	for (int i = 0; i < N; i++)
+		zombies[i].announce();
+	delete[] zombies;
+	system("leaks -q Zombie");
 	return (0);
 }

@@ -12,14 +12,9 @@
 
 #include "Zombie.hpp"
 
-/* Constructor function with no parameter */
+/* Constructor function */
 Zombie::Zombie() {
 	_name = "Zombie";
-}
-
-/* Constructor function with name parameter */
-Zombie::Zombie(std::string name) {
-	_name = name;
 }
 
 /* Destructor function */
@@ -28,7 +23,11 @@ Zombie::~Zombie() {
 }
 
 /* A function that announce its own name */
-void Zombie::announce() {
+void	Zombie::announce() {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
+/* Set the name into Zombie class */
+void	Zombie::set_name(std::string name) {
+	_name = name;
+}

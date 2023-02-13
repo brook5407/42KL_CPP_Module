@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 13:33:50 by brook             #+#    #+#             */
-/*   Updated: 2023/02/12 13:33:50 by brook            ###   ########.fr       */
+/*   Created: 2023/02/13 10:43:15 by chchin            #+#    #+#             */
+/*   Updated: 2023/02/13 10:50:09 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-/* Creates a new zombie using new and returns its pointer */
-Zombie	*newZombie(std::string name) {
-	Zombie	*zombie = new Zombie(name);
-	return (zombie);
+#include <iostream>
+
+class Harl {
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+
+public:
+	void	complain(std::string level);
 }
+
+#endif

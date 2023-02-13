@@ -10,14 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main(void)
 {
-	int N = 5;
-	Zombie *zombies = zombieHorde(N, "Horde");
-	for (int i = 0; i < N; i++)
-		zombies[i].announce();
-	delete[] zombies;
+	std::string brain("HI THIS IS BRAIN");
+	std::string *stringPTR = &brain;
+	std::string& stringREF = brain;
+
+	std::cout << &brain << std::endl;
+	std::cout << &stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
+
+	std::cout << brain << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 18:43:41 by brook             #+#    #+#             */
-/*   Updated: 2023/02/12 18:43:41 by brook            ###   ########.fr       */
+/*   Updated: 2023/02/13 11:10:12 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@
 #include "Weapon.hpp"
 
 class HumanB {
+
 private:
 	std::string _name;
-	Weapon _weapon;
+	Weapon *_weapon;
 
 public:
-	HumanB();
 	HumanB(std::string name);
 	~HumanB();
 	void	attack(void);
+	void	setWeapon(Weapon& weapon);
+
 };
 
 

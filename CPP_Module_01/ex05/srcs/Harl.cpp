@@ -1,19 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 13:36:59 by brook             #+#    #+#             */
-/*   Updated: 2023/02/12 13:36:59 by brook            ###   ########.fr       */
+/*   Created: 2023/02/13 10:43:13 by chchin            #+#    #+#             */
+/*   Updated: 2023/02/13 10:44:42 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <Harl.hpp>
 
-/* Creates a new zombie, setting its name and announces itself */
-void	randomChump(std::string name) {
-	Zombie	zombie(name);
-	zombie.announce();
-}
+
