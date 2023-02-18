@@ -10,46 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b(Fixed(5.05f) * Fixed(2));
+	Point a(0,0);
+	Point b(10,30);
+	Point c(20,0);
+	Point point1(10,15);
+	Point point2(30,15);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << "Input: A = (0, 0), B = (10, 30), C = (20, 0), P1(10, 15), P2(30,15)" << std::endl;
+	std::cout << "Explanation:" << std::endl;
+	std::cout << "              B(10,30)" << std::endl;
+	std::cout << "                / \\" << std::endl;
+	std::cout << "               /   \\" << std::endl;
+	std::cout << "              /     \\" << std::endl;
+	std::cout << "             /   P1  \\      P2" << std::endl;
+	std::cout << "            /         \\" << std::endl;
+	std::cout << "    A(0,0) ------------ C(20,0)" << std::endl;
 
-/*
-Input: A = (0, 0), B = (10, 30), C = (20, 0), P(10, 15)
-Output: Inside
-Explanation:
-              B(10,30)
-                / \
-               /   \
-              /     \
-             /   P   \      P'
-            /         \
-     A(0,0) ----------- C(20,0) */
-
-	std::cout << "Point inside Triangle: " << isInsideTriangle(0, 0, 10, 30, 20, 0, 10, 15);
+	std::cout << "Point1 inside Triangle:\n" << bsp(a, b, c, point1);
 	std::cout << std::endl;
-/*
-Input: A = (0, 0), B = (10, 30), C = (20, 0), P(30, 15)
-Output: Outside
-Explanation:
-              B(10,30)
-                / \
-               /   \
-              /     \
-             /       \      P
-            /         \
-     A(0,0) ----------- C(20,0)*/
-	std::cout << "Point inside Triangle: " << isInsideTriangle(0, 0, 10, 30, 20, 0, 30, 15);
+	std::cout << "Point2 inside Triangle:\n" << bsp(a, b, c, point2);
 	std::cout << std::endl;
 
 }

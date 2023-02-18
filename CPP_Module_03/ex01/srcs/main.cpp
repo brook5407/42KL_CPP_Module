@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap Boo("Boo");
-
-	Boo.attack("enemy");
-	for (int i = 0; i < 5; i++) {
-		Boo.takeDamage(3);
-		Boo.beRepaired(1);
-	}
+	ScavTrap Boo("Boo");
+	Boo.guardGate();
 	return (0);
 }

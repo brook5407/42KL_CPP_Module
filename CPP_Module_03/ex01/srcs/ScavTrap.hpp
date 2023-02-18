@@ -1,16 +1,28 @@
-//
-// Created by Chin Chun Yong on 16/02/2023.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/16 12:54:05 by brook             #+#    #+#             */
+/*   Updated: 2023/02/16 12:54:05 by brook            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef CPP_SCAVTRAP_HPP
-#define CPP_SCAVTRAP_HPP
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
+#include "ClapTrap.hpp"
 
-
-class ScavTrap {
-
+class ScavTrap : virtual public ClapTrap {
+public:
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(const ScavTrap &scavTrap);
+	const ScavTrap &operator=(const ScavTrap &scavTrap);
+	~ScavTrap();
+	void	guardGate();
 };
 
-
-
-#endif //CPP_SCAVTRAP_HPP
+#endif

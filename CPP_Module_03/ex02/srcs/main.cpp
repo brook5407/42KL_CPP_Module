@@ -10,18 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
-	ScavTrap Boo("Boo");
-
-	Boo.attack("enemy");
-	Boo.guardGate();
-	for (int i = 0; i < 5; i++) {
-		Boo.takeDamage(30);
-		Boo.beRepaired(1);
-	}
-	Boo.guardGate();
+	FragTrap Boo("Boo");
+	Boo.highFivesGuys();
 	return (0);
 }

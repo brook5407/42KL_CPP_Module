@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP_CLAPTRAP_HPP
-#define CPP_CLAPTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 
 class ClapTrap {
-private:
+protected:
 	std::string		_name;
 	unsigned int	_hp;
 	unsigned int	_ep;
@@ -25,6 +25,7 @@ private:
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int ad);
 	ClapTrap(const ClapTrap &clapTrap);
 	ClapTrap &operator=(const ClapTrap &clapTrap);
 	~ClapTrap();
@@ -33,4 +34,4 @@ public:
 	void	beRepaired(unsigned int amount);
 };
 
-#endif //CPP_CLAPTRAP_HPP
+#endif
