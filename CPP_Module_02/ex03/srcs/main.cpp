@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 22:12:55 by brook             #+#    #+#             */
-/*   Updated: 2023/02/13 22:12:55 by brook            ###   ########.fr       */
+/*   Updated: 2023/03/07 13:11:20 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ int main( void ) {
 	std::cout << "            /         \\" << std::endl;
 	std::cout << "    A(0,0) ------------ C(20,0)" << std::endl;
 
-	std::cout << "Point1 inside Triangle:\n" << bsp(a, b, c, point1);
+	std::cout << "Point1 inside Triangle:\n" << (bsp(a, b, c, point1) ? "TRUE" : "FALSE");
 	std::cout << std::endl;
-	std::cout << "Point2 inside Triangle:\n" << bsp(a, b, c, point2);
+	std::cout << "Point2 inside Triangle:\n" << (bsp(a, b, c, point2) ? "TRUE" : "FALSE" );
 	std::cout << std::endl;
-
 }

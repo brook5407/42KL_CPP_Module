@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 22:12:55 by brook             #+#    #+#             */
-/*   Updated: 2023/02/13 22:12:55 by brook            ###   ########.fr       */
+/*   Updated: 2023/03/07 12:06:56 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,33 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
+
+	Fixed c(3);
+
+	std::cout << c + c << std::endl;
+	std::cout << c - c << std::endl;
+	std::cout << c * c << std::endl;
+	std::cout << c / c << std::endl;
+
+	Fixed d(2);
+	if (c > d)
+		std::cout << c << " is larger than " << d << std::endl;
+	else
+		std::cout << c << " is not larger than " << d << std::endl;
+
+	if (c < d)
+		std::cout << d << " is smaller than " << c << std::endl;
+	else
+		std::cout << d << " is not smaller than " << c << std::endl;
+
+	if (c != d)
+		std::cout << c << " is not equal to " << d << std::endl;
+	else
+		std::cout << "smtg wrong" << std::endl;
+		
+	d = d + 1;
+	if (c == d)
+		std::cout << d << " is equal to " << c << std::endl;
+	else
+		std::cout << "smtg wrong" << std::endl;
 }
