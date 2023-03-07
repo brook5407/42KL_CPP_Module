@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 09:35:27 by brook             #+#    #+#             */
-/*   Updated: 2023/02/15 09:35:27 by brook            ###   ########.fr       */
+/*   Updated: 2023/03/07 15:46:56 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ public:
 	~Point();
 	float getX() const;
 	float getY() const;
-
 };
 
 bool bsp (Point const a, Point const b, Point const c, Point const point);

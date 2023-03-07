@@ -6,7 +6,7 @@
 /*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 22:12:55 by brook             #+#    #+#             */
-/*   Updated: 2023/03/07 12:06:56 by chchin           ###   ########.fr       */
+/*   Updated: 2023/03/07 13:19:45 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ int main( void ) {
 		std::cout << c << " is not larger than " << d << std::endl;
 
 	if (c < d)
-		std::cout << d << " is smaller than " << c << std::endl;
-	else
 		std::cout << d << " is not smaller than " << c << std::endl;
+	else
+		std::cout << d << " is smaller than " << c << std::endl;
 
 	if (c != d)
 		std::cout << c << " is not equal to " << d << std::endl;
 	else
 		std::cout << "smtg wrong" << std::endl;
-		
+
 	d = d + 1;
 	if (c == d)
 		std::cout << d << " is equal to " << c << std::endl;
