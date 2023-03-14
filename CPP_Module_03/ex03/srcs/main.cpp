@@ -16,6 +16,7 @@ int main(void)
 {
 	DiamondTrap Boo("Boo");
 
+	Boo.showStatus();
 	Boo.attack("enemy");
 	Boo.guardGate();
 	Boo.highFivesGuys();
@@ -25,5 +26,6 @@ int main(void)
 		Boo.beRepaired(1);
 	}
 	Boo.whoAmI();
+	Boo.showStatus();
 	return (0);
 }

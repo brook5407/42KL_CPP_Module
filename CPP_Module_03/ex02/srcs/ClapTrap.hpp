@@ -16,22 +16,22 @@
 #include <iostream>
 
 class ClapTrap {
-protected:
-	std::string		_name;
-	unsigned int	_hp;
-	unsigned int	_ep;
-	unsigned int	_ad;
+	protected:
+		std::string		_name;
+		unsigned int	_hp;
+		unsigned int	_ep;
+		unsigned int	_ad;
 
-public:
-	ClapTrap();
-	ClapTrap(std::string name);
-	ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int ad);
-	ClapTrap(const ClapTrap &clapTrap);
-	ClapTrap &operator=(const ClapTrap &clapTrap);
-	~ClapTrap();
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	public:
+		ClapTrap();
+		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap &clapTrap);
+		ClapTrap &operator=(const ClapTrap &clapTrap);
+		~ClapTrap();
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+		void	showStatus();
 };
 
 #endif

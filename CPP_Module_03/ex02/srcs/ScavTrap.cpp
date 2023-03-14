@@ -12,11 +12,19 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Default", 100, 50, 20){
+ScavTrap::ScavTrap() {
+	_name = "Default";
+	_hp = 100;
+	_ep = 50;
+	_ad = 20;
 	std::cout << "[ScavTrap] Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20){
+ScavTrap::ScavTrap(std::string name) {
+	_name = name;
+	_hp = 100;
+	_ep = 50;
+	_ad = 20;
 	std::cout << "[ScavTrap] " << _name << " : String constructor called" << std::endl;
 }
 

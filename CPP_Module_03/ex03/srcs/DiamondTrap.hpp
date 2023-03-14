@@ -17,17 +17,17 @@
 #include "ScavTrap.hpp"
 
 class DiamondTrap : public FragTrap, public ScavTrap {
-private:
-	std::string _name;
+	private:
+		std::string _name;
 
-public:
-	DiamondTrap();
-	DiamondTrap(std::string name);
-	DiamondTrap(const DiamondTrap &diamondTrap);
-	DiamondTrap &operator=(const DiamondTrap &diamondTrap);
-	~DiamondTrap();
-	void	attack(const std::string& target);
-	void	whoAmI();
+	public:
+		DiamondTrap();
+		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &diamondTrap);
+		DiamondTrap &operator=(const DiamondTrap &diamondTrap);
+		~DiamondTrap();
+		void	attack(const std::string& target);
+		void	whoAmI();
 };
 
 #endif

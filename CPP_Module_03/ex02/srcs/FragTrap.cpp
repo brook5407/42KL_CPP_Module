@@ -12,11 +12,19 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap("Default", 100, 100, 30) {
+FragTrap::FragTrap() {
+	_name = "Default";
+	_hp = 100;
+	_ep = 100;
+	_ad = 30;
 	std::cout << "[FragTrap] Default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
+FragTrap::FragTrap(std::string name) {
+	_name = name;
+	_hp = 100;
+	_ep = 100;
+	_ad = 30;
 	std::cout << "[FragTrap] " << _name << " : String constructor called" << std::endl;
 }
 

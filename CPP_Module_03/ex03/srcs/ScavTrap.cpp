@@ -12,11 +12,25 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap("Default", 100, 50, 20){
+ScavTrap::ScavTrap() {
+	_name = "Default";
+	_hp = 100;
+	_init_hp = 100;
+	_ep = 50;
+	_init_ep = 50;
+	_ad = 20;
+	_init_ad = 20;
 	std::cout << "[ScavTrap] Default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20){
+ScavTrap::ScavTrap(std::string name) {
+	_name = name;
+	_hp = 100;
+	_init_hp = 100;
+	_ep = 50;
+	_init_ep = 50;
+	_ad = 20;
+	_init_ad = 20;
 	std::cout << "[ScavTrap] " << _name << " : String constructor called" << std::endl;
 }
 
@@ -36,17 +50,6 @@ const ScavTrap &ScavTrap::operator=(const ScavTrap &scavTrap) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << "[ScavTrap] " << _name << " : Destructor called" << std::endl;
-}
-
-void ScavTrap::attack(const std::string &target) {
-	if (_hp == 0 && _ep == 0)
-		std::cout << "[ScavTrap] " << _name << " unable to attack: No hit points or energy points remaining."<< std::endl;
-	else if (_hp == 0)
-		std::cout << "[ScavTrap] " << _name << " unable to attack: No hit points remaining."<< std::endl;
-	else if (_ep == 0)
-		std::cout << "[ScavTrap] " << _name << " unable to attack: No energy point remaining."<< std::endl;
-	else
-		std::cout << "[ScavTrap] " << _name << " attacks " << target << ", " << "causing " << _ad << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate() {

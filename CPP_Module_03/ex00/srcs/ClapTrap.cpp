@@ -20,11 +20,6 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0) {
 	std::cout << "[ClapTrap] " << _name << " : String constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int ep, unsigned int ad) :
-_name(name), _hp(hp), _ep(ep), _ad(ad){
-	std::cout << "[ClapTrap] " << _name << " : Advance constructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap(const ClapTrap &clapTrap) {
 	std::cout << "[ClapTrap] " << _name << " : Copy constructor called" << std::endl;
 	(*this) = clapTrap;
@@ -78,4 +73,8 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		_ep -= 1;
 		std::cout << "[ClapTrap] " << _name << " repairs itself and gains "<< amount << " hit points. Energy points remaining: " << _ep << std::endl;
 	}
+}
+
+void ClapTrap::showStatus() {
+	std::cout << "[Status] Name: " << _name << ", Hp: " << _hp << ", Ep: " << _ep << ", Ad: " << _ad << std::endl;
 }

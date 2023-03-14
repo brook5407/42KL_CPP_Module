@@ -12,27 +12,34 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
-	std::cout << "[DiamondTrap] " << name << " : String constructor called" << std::endl;
-	_name = name;
-	_hp = 100;
-	_ep = 50;
-	_ad = 30;
-	std::cout << "Set hitPoints : " << _hp << std::endl;
-	std::cout << "Set energyPoints : " << _ep << std::endl;
-	std::cout << "Set attackDamage : " << _ad << std::endl;
+DiamondTrap::DiamondTrap() {
+	this->ClapTrap::_name = "Default_clap_name";
+	this->_name = "Default";
+	this->_hp = FragTrap::_init_hp;
+	this->_ep = ScavTrap::_init_ep;
+	this->_ad = FragTrap::_init_ad;
+	std::cout << "[DiamondTrap] Default constructor called" << std::endl;
+}
+
+DiamondTrap::DiamondTrap(std::string name) {
+	this->ClapTrap::_name = name + "_clap_name";
+	this->_name = name;
+	this->_hp = FragTrap::_init_hp;
+	this->_ep = ScavTrap::_init_ep;
+	this->_ad = FragTrap::_init_ad;
+	std::cout << "[DiamondTrap] " << this->_name << " : String constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &diamondTrap) {
-	std::cout << "[DiamondTrap] " << _name << " : Copy constructor called" << std::endl;
+	std::cout << "[DiamondTrap] " << this->_name << " : Copy constructor called" << std::endl;
 	(*this) = diamondTrap;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondTrap) {
-	_name = diamondTrap._name;
-	_hp = diamondTrap._hp;
-	_ep = diamondTrap._ep;
-	_ad = diamondTrap._ad;
+	this->_name = diamondTrap._name;
+	this->_hp = diamondTrap._hp;
+	this->_ep = diamondTrap._ep;
+	this->_ad = diamondTrap._ad;
 	std::cout << "[DiamondTrap] " << _name << " : Copy constructor called" << std::endl;
 	return (*this);
 }

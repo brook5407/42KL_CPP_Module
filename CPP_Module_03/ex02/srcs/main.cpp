@@ -15,6 +15,8 @@
 int main(void)
 {
 	FragTrap Boo("Boo");
+	Boo.showStatus();
 	Boo.highFivesGuys();
+	Boo.showStatus();
 	return (0);
 }
