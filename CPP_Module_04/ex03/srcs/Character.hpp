@@ -13,8 +13,8 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include <iostream>
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 #define MAX_INV 4
 
 class AMateria;
@@ -22,7 +22,7 @@ class AMateria;
 class Character : public ICharacter {
 	private:
 		std::string _name;
-		AMateria _inventory[MAX_INV];
+		AMateria *_inventory[MAX_INV];
 
 	public:
 		Character();
@@ -30,10 +30,12 @@ class Character : public ICharacter {
 		Character(const Character &character);
 		Character &operator=(const Character &character);
 		virtual ~Character();
-		virtual std::string const &getName();
+		AMateria *getAMateria(int idx) const;
+		virtual std::string const &getName() const;
 		virtual void equip(AMateria* m);
 		virtual void unequip(int idx);
 		virtual void use(int idx, ICharacter& target);
+		friend std::ostream& operator<<(std::ostream& os, const Character& character);
 };
 
 #endif

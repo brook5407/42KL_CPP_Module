@@ -29,6 +29,16 @@ int main() {
 	delete (meta);
 	std::cout << std::endl;
 
+	std::cout << "----------Copy Class Test----------" << std::endl;
+	const Animal* cat1 = new Cat;
+	const Animal* cat2 = cat1;
+	cat2->makeSound();
+	Animal* dog = new Dog;
+	Animal* fakeCat = new Cat;
+	*fakeCat = *dog;
+	std::cout << fakeCat->getType() << std::endl;
+	fakeCat->makeSound();
+
 	std::cout << "----------Wrong Class Test----------" << std::endl;
 	const WrongAnimal* w_animal = new WrongAnimal();
 	const WrongAnimal* w_cat = new WrongCat();

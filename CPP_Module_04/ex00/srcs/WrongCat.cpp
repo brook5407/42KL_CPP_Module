@@ -13,7 +13,7 @@
 #include "WrongCat.hpp"
 
 /* Default Constructor function */
-WrongCat::WrongCat() {/
+WrongCat::WrongCat() {
 	std::cout << "[WrongCat] Default constructor called" << std::endl;
 	this->type = "WrongCat";
 }

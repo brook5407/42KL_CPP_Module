@@ -36,4 +36,6 @@ const std::string &AMateria::getType() const {
 	return (this->_type);
 }
 
-void AMateria::use(ICharacter &target) {}
+void AMateria::use(ICharacter &target) {
+	std::cout << target.getName() << "unknown AMateria???" << std::endl;
+}
