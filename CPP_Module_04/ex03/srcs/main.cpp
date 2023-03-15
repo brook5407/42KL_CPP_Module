@@ -41,10 +41,14 @@ void ft_tests()
 	me->equip(tmp);
 	if (tmp != NULL)
 		std::cout << "tmp: " << tmp->getType() << std::endl;
+	std::cout << "me equip <tmp>" << std::endl;
+	std::cout << *me << std::endl;
 	tmp1 = src->createMateria("cure");
 	me->equip(tmp1);
 	if (tmp != NULL)
 		std::cout << "tmp1: " << tmp1->getType() << std::endl;
+	std::cout << "me equip <tmp1>" << std::endl;
+	std::cout << *me << std::endl;
 	tmp = src->createMateria("fire"); //NULL
 	me->equip(tmp);
 	if (tmp != NULL)
@@ -73,7 +77,7 @@ void ft_tests()
 	charles->equip(tmp3);
 	tmp = src->createMateria("earth");
 	charles->equip(tmp);
-	std::cout << *charles;
+	std::cout << *charles << std::endl;
 	Character	*charles_copy = new Character(*charles);
 	std::cout << *charles_copy;
 	std::cout << std::endl;
@@ -83,11 +87,11 @@ void ft_tests()
 	std::cout << "-----------------------" << std::endl;
 	std::cout << "Unequip index 0 in charles's inventory" << std::endl;
 	charles->unequip(0); // this shows that they have different materia pointers equipped
-	std::cout << *charles;
+	std::cout << *charles << std::endl;
 	std::cout << "Unequip index 1 in charles_copy's inventory" << std::endl;
 	tmp4 = charles_copy->getAMateria(1);
 	charles_copy->unequip(1); //this will produce a leak if we don't store the address somewhere else before
-	std::cout << *charles_copy;
+	std::cout << *charles_copy << std::endl;
 	delete tmp4;
 	std::cout << "Add 1 cure and 1 ice in charles copy" << std::endl;
 	tmp = src->createMateria("cure");
@@ -119,8 +123,8 @@ void ft_tests()
 	// Unequip tests:
 	std::cout << "UNEQUIP:" << std::endl;
 	std::cout << "-----------------------" << std::endl;
-	std::cout << *me;
-	std::cout << "me unequip slot 1" << std::endl;
+	std::cout << *me << std::endl;
+	std::cout << "me unequip slot -1" << std::endl;
 	me->unequip(-1); // unequip an empty / non existing slot in inventory
 	std::cout << "me unequip slot 18" << std::endl;
 	me->unequip(18);
