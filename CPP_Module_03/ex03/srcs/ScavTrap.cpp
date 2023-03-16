@@ -52,6 +52,17 @@ ScavTrap::~ScavTrap() {
 	std::cout << "[ScavTrap] " << _name << " : Destructor called" << std::endl;
 }
 
+void ScavTrap::attack(const std::string &target) {
+	if (_hp == 0 && _ep == 0)
+		std::cout << "[ScavTrap] " << _name << " unable to attack: No hit points or energy points remaining."<< std::endl;
+	else if (_hp == 0)
+		std::cout << "[ScavTrap] " << _name << " unable to attack: No hit points remaining."<< std::endl;
+	else if (_ep == 0)
+		std::cout << "[ScavTrap] " << _name << " unable to attack: No energy point remaining."<< std::endl;
+	else
+		std::cout << "[ScavTrap] " << _name << " attacks " << target << ", " << "causing " << _ad << " points of damage!" << std::endl;
+}
+
 void ScavTrap::guardGate() {
 	if (_hp == 0 && _ep == 0)
 		std::cout << "[ScavTrap] " << _name << " Gate keeper mode failed: No hit points or energy points remaining."<< std::endl;

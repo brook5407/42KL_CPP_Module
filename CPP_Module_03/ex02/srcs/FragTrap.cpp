@@ -46,6 +46,17 @@ FragTrap::~FragTrap() {
 	std::cout << "[FragTrap] " << _name << " : Destructor called" << std::endl;
 }
 
+void FragTrap::attack(const std::string &target) {
+	if (_hp == 0 && _ep == 0)
+		std::cout << "[FragTrap] " << _name << " unable to attack: No hit points or energy points remaining."<< std::endl;
+	else if (_hp == 0)
+		std::cout << "[FragTrap] " << _name << " unable to attack: No hit points remaining."<< std::endl;
+	else if (_ep == 0)
+		std::cout << "[FragTrap] " << _name << " unable to attack: No energy point remaining."<< std::endl;
+	else
+		std::cout << "[FragTrap] " << _name << " attacks " << target << ", " << "causing " << _ad << " points of damage!" << std::endl;
+}
+
 void FragTrap::highFivesGuys() {
 	if (_hp == 0 && _ep == 0)
 		std::cout << "[FragTrap] " << _name << " unable to repair: No hit points or energy points remaining."<< std::endl;
