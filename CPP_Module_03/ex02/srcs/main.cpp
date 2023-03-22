@@ -16,6 +16,7 @@ int main(void)
 {
 	FragTrap Boo("Boo");
 	Boo.showStatus();
+	Boo.attack("enemy");
 	Boo.highFivesGuys();
 	Boo.showStatus();
 	return (0);

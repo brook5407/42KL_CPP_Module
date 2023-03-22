@@ -16,6 +16,7 @@ int main(void)
 {
 	ScavTrap Boo("Boo");
 	Boo.showStatus();
+	Boo.attack("enemy");
 	Boo.guardGate();
 	Boo.showStatus();
 	return (0);
