@@ -29,19 +29,25 @@ class Form {
 		Form(std::string name, int gradeToSign, int gradeToExec);
 		Form(const Form &rhs);
 		Form &operator=(const Form &rhs);
-		~Form();
+		virtual ~Form();
 
 		std::string getName() const;
 		bool		getSigned() const;
 		int 		getGradeToSign() const;
 		int 		getGradeToExec() const;
 		void		beSign(const Bureaucrat &bureaucrat);
+		virtual void	execute(Bureaucrat const & executor) const = 0;
+		virtual std::string	getTarget() const = 0;
 
 		class GradeTooHighException : public std::exception {
 			public:
 				virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			public:
+				virtual const char* what() const throw();
+		};
+		class GradeNotSignException : public std::exception {
 			public:
 				virtual const char* what() const throw();
 		};

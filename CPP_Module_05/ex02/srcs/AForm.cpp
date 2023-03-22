@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Form::Form() : _name("Default") , _gradeToSign(150), _gradeToExec(150){
 	this->_signed = false;
@@ -25,7 +25,8 @@ Form::Form(std::string name, int gradeToSign, int gradeToExec) :
 	this->_signed = false;
 }
 
-Form::Form(const Form &rhs) : _name(rhs._name), _gradeToSign(rhs._gradeToSign), _gradeToExec(rhs._gradeToExec) {
+Form::Form(const Form &rhs) :
+	_name(rhs._name), _gradeToSign(rhs._gradeToSign), _gradeToExec(rhs._gradeToExec) {
 	this->_signed = rhs._signed;
 	*this = rhs;
 }
@@ -69,11 +70,15 @@ const char *Form::GradeTooLowException::what() const throw() {
 	return (BOLDRED"Form grade out of range: Grade too low"RESET);
 }
 
+const char *Form::GradeNotSignException::what() const throw() {
+	return (BOLDRED"Form is not sign: REQUEST IT"RESET);
+}
+
 std::ostream& operator<<(std::ostream& os, const Form& rhs) {
 	os << BOLDGREEN;
 	os << "Form name: " << rhs.getName() << std::endl;
 	os << "Grade to sign: " << rhs.getGradeToSign() << std::endl;
 	os << "Grade to execute: " << rhs.getGradeToExec() << std::endl;
-	os << "Signed: " << rhs.getSigned() << std::endl;
+	os << "Signed: " << rhs.getSigned() << RESET << std::endl;
 	return (os);
 }

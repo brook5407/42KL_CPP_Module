@@ -79,6 +79,6 @@ std::ostream& operator<<(std::ostream& os, const Form& rhs) {
 	os << "Form name: " << rhs.getName() << std::endl;
 	os << "Grade to sign: " << rhs.getGradeToSign() << std::endl;
 	os << "Grade to execute: " << rhs.getGradeToExec() << std::endl;
-	os << "Signed: " << rhs.getSigned() << std::endl;
+	os << "Signed: " << rhs.getSigned() << RESET << std::endl;
 	return (os);
 }

@@ -1,4 +1,4 @@
-NAME = animal
+NAME = bureaucrat
 
 CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98

@@ -12,13 +12,11 @@
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {
-	this->_name = "default";
+Bureaucrat::Bureaucrat() : _name("Default") {
 	this->_grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) {
-	this->_name = name;
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
@@ -31,7 +29,6 @@ Bureaucrat::Bureaucrat(const Bureaucrat &rhs) {
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
-	this->_name = rhs._name;
 	this->_grade = rhs._grade;
 	return (*this);
 }
@@ -59,14 +56,25 @@ void Bureaucrat::decrementGrade() {
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
-	return (BOLDRED"Grade out of range: Grade too high"RESET);
+	return (BOLDRED"Bureaucrat grade out of range: Grade too high"RESET);
 }
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
-	return (RED"Grade out of range: Grade too low"RESET);
+	return (BOLDRED"Bureaucrat grade out of range: Grade too low"RESET);
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs) {
-	os << BOLDGREEN << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << RESET;
+	os << BOLDGREEN << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << RESET << std::endl;
 	return (os);
+}
+
+void Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSign(*this);
+		std::cout << BOLDGREEN << this->_name << " signed " << form.getName() << RESET << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cout << BOLDRED << this->_name << " couldn't sign " << form.getName();
+		std::cout << " because " << e.what() << "." << RESET << std::endl;
+	}
 }

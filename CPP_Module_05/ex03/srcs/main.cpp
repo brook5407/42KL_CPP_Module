@@ -12,47 +12,26 @@
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-	try
-	{
-		Bureaucrat  *bureaucrat = new Bureaucrat("Bureaucrat", 40);
-		Form        *form = new PresidentialPardonForm("Form");
-		Form        *form2 = new RobotomyRequestForm("Form2");
-		Form        *form3 = new ShrubberyCreationForm("Chajarat_l3a2ila");
+	while (1) {
+		try {
+			Intern intern;
+			std::string formName;
+			std::string target;
 
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Sign Form section " << std::endl;
-		bureaucrat->signForm(*form);
-		bureaucrat->signForm(*form2);
-		bureaucrat->signForm(*form3);
-
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << *bureaucrat << std::endl;
-		std::cout << *form << std::endl;
-		std::cout << *form2 << std::endl;
-		std::cout << *form3 << std::endl;
-
-		std::cout << "----------------------------------------" << std::endl;
-		std::cout << "Execute Form section " << std::endl;
-		bureaucrat->executeForm(*form);
-		bureaucrat->executeForm(*form2);
-		bureaucrat->executeForm(*form3);
-
-		delete bureaucrat;
+			std::cout << "Enter Form Name: ";
+			std::getline(std::cin, formName);
+			std::cout << "Enter Target Name: ";
+			std::getline(std::cin, target);
+			Form *form = intern.makeForm(formName, target);
+			std::cout << *form << std::endl;
+			delete form;
+		}
+		catch (const std::exception &e) {
+			std::cerr << BOLDRED << e.what() << RESET << std::endl;
+		}
 	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Grade out of range " << '\n';
-	}
-
-	return (0);
 }

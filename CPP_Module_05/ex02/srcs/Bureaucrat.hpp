@@ -32,7 +32,7 @@
 #define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 #define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Form;
 
@@ -53,6 +53,7 @@ class Bureaucrat {
 		void		incrementGrade();
 		void		decrementGrade();
 		void		signForm(Form &form);
+		void		executeForm(Form const &form);
 
 		class GradeTooHighException : public std::exception {
 			public:

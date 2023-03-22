@@ -33,6 +33,10 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
+std::string ShrubberyCreationForm::getTarget() const{
+	return (this->_target);
+}
+
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
 	if (!this->getSigned())
 		throw Form::GradeNotSignException();

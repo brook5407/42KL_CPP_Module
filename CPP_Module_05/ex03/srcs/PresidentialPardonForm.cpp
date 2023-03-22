@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm() :
 	this->_target = "Default";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target)  :
+PresidentialPardonForm::PresidentialPardonForm(std::string target) :
 	Form("Presidential Pardon Form", 25, 5){
 	this->_target = target;
 }
@@ -32,6 +32,10 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
+std::string PresidentialPardonForm::getTarget() const {
+	return (this->_target);
+}
 
 void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
 	if (!this->getSigned())

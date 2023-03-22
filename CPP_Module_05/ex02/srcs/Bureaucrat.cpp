@@ -71,10 +71,21 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs) {
 void Bureaucrat::signForm(Form &form) {
 	try {
 		form.beSign(*this);
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
+		std::cout << BOLDGREEN << this->_name << " signed " << form.getName() << RESET << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cout << BOLDRED << this->_name << " couldn't sign " << form.getName();
+		std::cout << " because " << e.what() << "." << RESET << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const Form &form) {
+	try {
+		form.execute(*this);
+		std::cout << BOLDGREEN << this->_name << " executed " << form.getName() << RESET << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cout << BOLDRED << this->_name << " couldn't executed " << form.getName();
 		std::cout << " because " << e.what() << "." << RESET << std::endl;
 	}
 }

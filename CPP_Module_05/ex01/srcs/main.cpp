@@ -10,42 +10,54 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 int main(void)
 {
-	std::cout << "---------- User Test ----------" << std::endl;
 	std::string name;
 	int grade;
-	char symbol;
+	int symbol;
+	std::string form_name;
+	int g_sign;
+	int g_exec;
+
 	while (1)
 	{
+		std::cout << "---------- Bureaucrat Info----------" << std::endl;
 		std::cout << BOLDBLUE"Enter name: "RESET;
 		std::cin >> name;
 		std::cout << BOLDBLUE"Enter grade: "RESET;
 		std::cin >> grade;
+		std::cout << "---------- Form Info ----------" << std::endl;
+		std::cout << BOLDBLUE"Enter name: "RESET;
+		std::cin >> form_name;
+		std::cout << BOLDBLUE"Enter grade for sign: "RESET;
+		std::cin >> g_sign;
+		std::cout << BOLDBLUE"Enter grade for execute: "RESET;
+		std::cin >> g_exec;
 		try{
 			Bureaucrat user(name, grade);
 			std::cout << user << std::endl;
-			try{
-				std::cout << BOLDBLUE"Enter +/-: "RESET;
+			Form form(form_name, g_sign, g_exec);
+			std::cout << form;
+			try {
+				std::cout << BOLDBLUE"Enter 1 to sign: "RESET;
 				std::cin >> symbol;
-				if (symbol == '+')
-					user.incrementGrade();
-				if (symbol == '-')
-					user.decrementGrade();
+				if (symbol == 1)
+					user.signForm(form);
 			}
 			catch (std::exception & e)
 			{
 				std::cout << e.what() << std::endl;
-				return (0);
+				continue;
 			}
-			std::cout << user << std::endl;
+			std::cout << form;
 		}
 		catch (std::exception & e)
 		{
 			std::cout << e.what() << std::endl;
-			return (0);
+			continue;
 		}
 	}
 }

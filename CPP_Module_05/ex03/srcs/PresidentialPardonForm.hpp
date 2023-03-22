@@ -16,6 +16,7 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm &rhs);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
 	~PresidentialPardonForm();
+	std::string getTarget() const;
 	void execute(Bureaucrat const & executor) const;
 };
 

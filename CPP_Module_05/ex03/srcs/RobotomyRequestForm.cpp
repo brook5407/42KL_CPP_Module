@@ -33,6 +33,10 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 
+std::string RobotomyRequestForm::getTarget() const {
+	return (this->_target);
+}
+
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	if (!this->getSigned())
 		throw Form::GradeNotSignException();
