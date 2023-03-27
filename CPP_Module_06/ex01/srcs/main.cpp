@@ -42,7 +42,7 @@ int main(void)
 	char *p = reinterpret_cast<char*>(data);
 	int *n = reinterpret_cast<int*>(data);
 	std::cout << "n: " << *n << std::endl;
-	p += sizeof(long long); // sizeof(int) * 2 because 2 figure in n
+	p += sizeof(long long); // sizeof(long long) is 8
 	std::string *str = reinterpret_cast<std::string*>(p);
 	std::cout << "str: " << *str << std::endl;
 	p+= sizeof(std::string); // sizeof(std::string) is 24
