@@ -1,0 +1,48 @@
+#include <iostream>
+#include <limits>
+
+class ScalarConverter {
+public:
+    static void convert(const std::string& str) {
+        try {
+            // First try to convert to char
+            char c = std::stoi(str);
+            if (isprint(c)) {
+                std::cout << "char: " << c << std::endl;
+            } else {
+                std::cout << "char: Non displayable" << std::endl;
+            }
+        } catch (...) {
+            // Conversion to char failed, try other types
+            try {
+                // Try to convert to int
+                int i = std::stoi(str);
+                std::cout << "int: " << i << std::endl;
+
+                // Convert int to float and double
+                float f = static_cast<float>(i);
+                double d = static_cast<double>(i);
+                std::cout << "float: " << f << "f" << std::endl;
+                std::cout << "double: " << d << std::endl;
+            } catch (...) {
+                // Conversion to int failed, try float
+                try {
+                    float f = std::stof(str);
+                    std::cout << "float: " << f << "f" << std::endl;
+
+                    // Convert float to int and double
+                    int i = static_cast<int>(f);
+                    double d = static_cast<double>(f);
+                    std::cout << "int: " << i << std::endl;
+                    std::cout << "double: " << d << std::endl;
+                } catch (...) {
+                    // Conversion to float failed, try double
+                    try {
+                        double d = std::stod(str);
+                        std::cout << "double: " << d << std::endl;
+
+                        // Convert double to int and float
+                        int i = static_cast<int>(d);
+                        float f = static_cast<float>(d);
+                        std::cout << "int: " << i << std::endl;
+                        std::cout << "float: " << f << "f
