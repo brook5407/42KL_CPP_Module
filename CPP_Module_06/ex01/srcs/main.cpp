@@ -18,7 +18,7 @@ int main(void)
 	std::cout << data << std::endl;
 	data->n = 42;
 	data->str = "Kuala Lumpur";
-	data->c = '?';
+	data->c = '#';
 	data->b = true;
 
 	uintptr_t raw = serializer.serialize(data);
@@ -37,6 +37,20 @@ int main(void)
 	std::cout << "str: " << data->str << std::endl;
 	std::cout << "c: " << data->c << std::endl;
 	std::cout << "b: " << data->b << std::endl;
+
+	std::cout << "---------------------------" << std::endl;
+	char *p = reinterpret_cast<char*>(data);
+	int *n = reinterpret_cast<int*>(data);
+	std::cout << "n: " << *n << std::endl;
+	p += sizeof(long long); // sizeof(int) * 2 because 2 figure in n
+	std::string *str = reinterpret_cast<std::string*>(p);
+	std::cout << "str: " << *str << std::endl;
+	p+= sizeof(std::string); // sizeof(std::string) is 24
+	char *c = reinterpret_cast<char*>(p);
+	std::cout << "c: " << *c << std::endl;
+	p += sizeof(char); // sizeof(char) is 1
+	bool *b = reinterpret_cast<bool*>(p);
+	std::cout << "b: " << *b << std::endl;
 
 	delete data;
 	return 0;
