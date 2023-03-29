@@ -20,6 +20,7 @@ class Array {
 private:
 	unsigned int _size;
 	T* _array;
+
 public:
 	Array() : _size(0), _array(NULL) {};
 	Array(unsigned int n) : _size(n), _array(new T[n]) {};
@@ -27,6 +28,9 @@ public:
 		for (unsigned int i = 0; i < _size; i++) {
 			_array[i] = rhs._array[i];
 		}
+	};
+	~Array() {
+		delete[] _array;
 	};
 	Array & operator=(Array const & rhs) {
 		if (this != &rhs) {
@@ -38,9 +42,6 @@ public:
 			}
 		}
 		return *this;
-	};
-	~Array() {
-		delete[] _array;
 	};
 	T & operator[](unsigned int i) {
 		if (i >= _size) {
