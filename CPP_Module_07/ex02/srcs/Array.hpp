@@ -59,16 +59,16 @@ public:
 			std::cout << *(_array + i) << " ";
 		std::cout << std::endl;
 	}
-	friend Array<T>* combine(Array<T>& a1, Array<T>& a2) {
-		Array<T>* a = new Array<T>(a1._size + a2._size);
-		for (unsigned int i = 0; i < a1._size; i++) {
-			(*a)[i] = *(a1._array + i);
+	Array<T> *operator+(Array<T> const & rhs) {
+		Array<T> *newArray = new Array<T>(_size + rhs._size);
+		for (unsigned int i = 0; i < _size; i++) {
+			newArray->_array[i] = _array[i];
 		}
-		for (unsigned int i = 0; i < a2._size; i++) {
-			(*a)[i + a1._size] = *(a2._array + i);
+		for (unsigned int i = 0; i < rhs._size; i++) {
+			newArray->_array[i + _size] = rhs._array[i];
 		}
-		return a;
-	};
+		return newArray;
+	}
 };
 
 #endif

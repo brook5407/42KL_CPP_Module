@@ -77,8 +77,8 @@ int main(int, char**)
 		alpha2[i] = 'a' + i;
 
 	alpha2.print();
-	Array<char>*alpha3 = combine(alpha1, alpha2);
+	Array<char>*alpha3 = alpha1 + alpha2;
 	alpha3->print();
-//	system("leaks array");
+	system("leaks array");
 	return 0;
 }
