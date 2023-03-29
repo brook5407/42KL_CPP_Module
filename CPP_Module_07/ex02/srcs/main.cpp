@@ -14,6 +14,8 @@
 #include "Array.hpp"
 
 #define MAX_VAL 750
+
+
 int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
@@ -62,5 +64,21 @@ int main(int, char**)
 //		std::cout << numbers[i] << std::endl;
 	}
 	delete [] mirror;//
+
+	std::cout << "\n-------------Additional Test-------------" << std::endl;
+	Array<char> alpha1(26);
+	for (int i = 0 ; i < alpha1.Length() ; i++)
+		alpha1[i] = 'A' + i;
+
+	alpha1.print();
+
+	Array<char> alpha2(26);
+	for (int i = 0 ; i < alpha2.Length() ; i++)
+		alpha2[i] = 'a' + i;
+
+	alpha2.print();
+	Array<char>*alpha3 = combine(alpha1, alpha2);
+	alpha3->print();
+//	system("leaks array");
 	return 0;
 }
