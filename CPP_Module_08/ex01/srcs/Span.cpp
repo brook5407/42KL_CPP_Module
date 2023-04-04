@@ -51,6 +51,13 @@ void Span::addNumber(int n) {
 		throw std::exception();
 }
 
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+	if (this->_vec.size() + std::distance(begin, end) <= this->_n)
+		this->_vec.insert(this->_vec.end(), begin, end);
+	else
+		throw std::exception();
+}
+
 int Span::shortestSpan() {
 	if (this->_vec.size() < 2)
 		throw std::invalid_argument("At least two numbers are required");
