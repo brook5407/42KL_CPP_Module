@@ -112,3 +112,5 @@ void BitcoinExchange::print() {
 		std::cout << it->first << "," << it->second << std::endl;
 	}
 }
+
+

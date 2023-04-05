@@ -1,4 +1,4 @@
-NAME = easyfind
+NAME = RPN
 
 CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
