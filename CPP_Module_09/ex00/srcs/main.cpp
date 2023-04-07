@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 23:29:31 by brook             #+#    #+#             */
-/*   Updated: 2023/03/31 23:29:31 by brook            ###   ########.fr       */
+/*   Updated: 2023/04/07 13:09:14 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void importInputFile(const std::string &filename, std::multimap<std::string, std
 	std::string line;
 	std::getline(file, line); //skip the first line
 	while(std::getline(file, line)) {
+		if (line.empty())
+			continue;
 		std::istringstream iss(line);
 		std::vector<std::string> results((std::istream_iterator<std::string>(iss)),
 										 std::istream_iterator<std::string>());

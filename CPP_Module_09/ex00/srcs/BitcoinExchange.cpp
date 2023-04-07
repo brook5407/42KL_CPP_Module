@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brook <brook@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chchin <chchin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 14:50:36 by brook             #+#    #+#             */
-/*   Updated: 2023/03/31 14:50:36 by brook            ###   ########.fr       */
+/*   Updated: 2023/04/07 13:08:29 by chchin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,8 @@ void BitcoinExchange::convert(const std::multimap<std::string, std::string> &cur
 			isValidValue(it->second);
 			std::map<std::string, float>::const_iterator it2;
 			it2 = this->_record.lower_bound(it->first);
-			it2--;
+			if (it2->first != it->first)
+				it2--;
 			std::cout << BOLDGREEN << it->first << " => " << it->second << " = ";
 			std::cout << std::stof(it->second) * it2->second << std::endl << RESET;
 		}
